@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ghiceste numarul</title>
+  </head>
+  <body>
+    <h1>Ghiceste numarul!</h1>
+    <p>Introdu un număr între 1 și 10:</p>
+    <input type="number" id="guess" />
+    <button onclick="checkGuess()">Verifica</button>
+    <p id="message"></p>
+
+    <script>
+      // Generam un numar aleator intre 1 si 10
+      let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+      function checkGuess() {
+        let userGuess = Number(document.getElementById("guess").value);
+        let message = document.getElementById("message");
+
+        if (userGuess === randomNumber) {
+          message.textContent = "🎉 Felicitări! Ai ghicit numărul!";
+        } else if (userGuess < randomNumber) {
+          message.textContent = "📈 Numărul e mai mare!";
+        } else {
+          message.textContent = "📉 Numărul e mai mic!";
+        }
+      }
+    </script>
+  </body>
+</html>
